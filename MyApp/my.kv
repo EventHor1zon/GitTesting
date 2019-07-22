@@ -37,7 +37,7 @@ WindowManager:
     FloatLayout:
         size_hint:(1, 0.9)
         pos_hint:{"top":0.9}
-        background_color:(1, 1, 1, 1)
+        background_color:(1, 0, 1, 1)
     
 <MenuWindow>:
     name: "menu"
@@ -54,7 +54,7 @@ WindowManager:
             pos_hint:{"top":0.9}
             background_color:(0.2,0.2,0.9, 1)
         Label:
-            text:"Option 1"
+            text:"Set Dynamic Range (0-360)"
             size_hint:(0.5, 0.1)
             pos_hint:{"top":0.8, "left":0}
             background_color:(0.8,0.8,0.8,1)    
@@ -65,7 +65,7 @@ WindowManager:
             background_color:(1,1,1,1)
             multiline: False
         Label:
-            text:"Option 2"
+            text:"Speed (0-100)%"
             size_hint:(0.5, 0.1)
             pos_hint:{"top":0.7, "left":0}
             background_color:(0.8,0.8,0.8,1)
@@ -76,7 +76,7 @@ WindowManager:
             background_color:(1,1,1,1)
             multiline: False
         Label:
-            text:"Option 3"
+            text:"Torque (0-100)%"
             size_hint:(0.5, 0.1)
             pos_hint:{"top":0.6, "left":0}
             background_color:(0.8,0.8,0.8,1)
@@ -87,7 +87,7 @@ WindowManager:
             background_color:(1,1,1,1)
             multiline: False
         Button:
-            text:"Sumbit"
+            text:"Update"
             on_release:
             pos_hint:{"bottom":0, "left":0.3}
             size_hint:(0.5, 0.1)
