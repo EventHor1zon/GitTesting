@@ -1,0 +1,93 @@
+#:kivy 1.11.1
+
+WindowManager:
+    MainWindow:
+    MenuWindow:
+    
+<TopBar>:
+    name:"topbar"
+    
+    
+    size_hint:(1, 0.1)
+    pos_hint:{"top": 1}
+    cols: 3
+    rows: 1
+        
+    Button:
+        size_hint:(0.5, 0.5)
+        text: "Menu" if root.name=="main" else "Main"
+        background_color: (1,1,1,1)
+        on_press: root.button_menu()
+        on_release: app.root.current=root.link
+    Button:
+        size_hint:(0.5, 0.5)
+        text: "Settings"
+        on_release: root.button_mid(self.instance) 
+    Button:
+        size_hint:(0.5, 0.5)
+        text: "Exit"
+        on_release: root.button_right(self.instance)
+    
+    
+<MainWindow>:
+    name: "main"
+    
+    TopBar:
+
+    FloatLayout:
+        size_hint:(1, 0.9)
+        pos_hint:{"top":0.9}
+        background_color:(1, 1, 1, 1)
+    
+<MenuWindow>:
+    name: "menu"
+    option1:option1
+    option2:option2
+    option3:option3
+        
+    TopBar:
+    
+    FloatLayout:
+        Label:
+            text: "Main Menu"
+            size_hint:(1, 0.1)
+            pos_hint:{"top":0.9}
+            background_color:(0.2,0.2,0.9, 1)
+        Label:
+            text:"Option 1"
+            size_hint:(0.5, 0.1)
+            pos_hint:{"top":0.8, "left":0}
+            background_color:(0.8,0.8,0.8,1)    
+        TextInput:
+            id:option1
+            size_hint:(0.5,0.2)
+            pos_hint:{"top":0.8,"right":1}
+            background_color:(1,1,1,1)
+            multiline: False
+        Label:
+            text:"Option 2"
+            size_hint:(0.5, 0.1)
+            pos_hint:{"top":0.7, "left":0}
+            background_color:(0.8,0.8,0.8,1)
+        TextInput:
+            id:option2
+            size_hint:(0.5,0.2)
+            pos_hint:{"top":0.7,"right":1}
+            background_color:(1,1,1,1)
+            multiline: False
+        Label:
+            text:"Option 3"
+            size_hint:(0.5, 0.1)
+            pos_hint:{"top":0.6, "left":0}
+            background_color:(0.8,0.8,0.8,1)
+        TextInput:
+            id:option3
+            size_hint:(0.5,0.2)
+            pos_hint:{"top":0.6,"right":1}
+            background_color:(1,1,1,1)
+            multiline: False
+        Button:
+            text:"Sumbit"
+            on_release:
+            pos_hint:{"bottom":0, "left":0.3}
+            size_hint:(0.5, 0.1)
